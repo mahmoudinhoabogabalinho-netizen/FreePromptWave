@@ -21,7 +21,7 @@
     </header>
     
     <main class="main-content">
-      <PromptList />
+      <FancyPromptGenerator />
     </main>
     
     <footer class="app-footer">
@@ -34,12 +34,12 @@
 </template>
 
 <script>
-import PromptList from './components/PromptList.vue'
+import FancyPromptGenerator from './components/FancyPromptGenerator.vue'
 
 export default {
   name: 'App',
   components: {
-    PromptList
+    FancyPromptGenerator
   }
 }
 </script>
@@ -117,7 +117,7 @@ export default {
 }
 
 .main-content {
-  padding: 2rem;
+  padding: 0;
   min-height: calc(100vh - 280px);
 }
 

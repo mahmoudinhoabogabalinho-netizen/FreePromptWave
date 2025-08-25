@@ -21,6 +21,10 @@
     </header>
     
     <main class="main-content">
+      <!-- SmartPromptMaker Integration as per Issue #2 -->
+      <SmartPromptMaker @prompt-saved="handlePromptSaved" />
+      
+      <!-- Other components -->
       <FancyPromptGenerator />
     </main>
     
@@ -35,11 +39,20 @@
 
 <script>
 import FancyPromptGenerator from './components/FancyPromptGenerator.vue'
+import SmartPromptMaker from './components/SmartPromptMaker.vue'
 
 export default {
   name: 'App',
   components: {
-    FancyPromptGenerator
+    FancyPromptGenerator,
+    SmartPromptMaker  // Added as per issue #2 requirements
+  },
+  methods: {
+    handlePromptSaved(promptData) {
+      // Handle saved prompt event from SmartPromptMaker
+      console.log('Prompt saved:', promptData);
+      // Could emit to other components or show notification
+    }
   }
 }
 </script>
@@ -117,7 +130,7 @@ export default {
 }
 
 .main-content {
-  padding: 0;
+  padding: 20px 0;
   min-height: calc(100vh - 280px);
 }
 
